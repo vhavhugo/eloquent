@@ -6,10 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    // const CREATED_AT = 'criacao';
-    // const UPDATE_AT = 'atualizacao';
-    
-    // protected $table = 'artigo';
-
-    // protected $primaryKey = 'codigo';
+    // protected $fillable = ['title','content'];
+    protected $quarded = ['id','created_at','updated_at'];
 }
