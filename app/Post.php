@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     // protected $fillable = ['title','content'];
-    protected $quarded = ['id','created_at','updated_at'];
+   // protected $quarded = ['id','created_at','updated_at'];
 }
