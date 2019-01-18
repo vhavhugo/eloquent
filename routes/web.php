@@ -11,14 +11,7 @@
 |
 */
 
-Route::get('/post', function() {
-    return view('post.single', [
-        'name' => 'Post de Exemplo',
-        'slug' => 'post de exemplo 123',
-        'description' => 'Novidades do post de exemplo'
-    ]);
-});
-
+Route::get('/post/{posts}', 'Site\PostController@show');
 Route::get('/contato', function() {
     return view('contact.index');
 });
