@@ -1,5 +1,33 @@
+Relacionamento 1 para 1
 
-
+- Model - App\Post
+ class Post extends Model
+{
+    /**
+     * Mapeia o relacionamento com o model details
+     *
+     * @return void
+     */
+   public function details()
+   {
+        return $this->hasOne('App\Details');
+       
+   }
+}
+ - Model - App\Details
+class Details extends Model
+{
+ 
+       /**
+     * Mapeia o relacionamento com o model post
+     *
+     * @return void
+     */
+    public function post()
+    {
+        return $this->belongsTo('App\Post');
+    }
+}
 # Treinaweb: curso ["Laravel - Blade Templates"](https://www.treinaweb.com.br/curso/laravel-blade-templates)
 
 
