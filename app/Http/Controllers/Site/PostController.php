@@ -8,6 +8,15 @@ use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
+
+    public function index()
+    {
+        $posts = Post::get();
+        
+        return view('news.index')->with([
+            'posts' => $posts
+        ]);
+    }
     /**
      * Mostra um post único
      *
