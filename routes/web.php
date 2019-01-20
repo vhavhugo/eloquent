@@ -14,9 +14,13 @@
 Route::get('/post/{posts}', 'Site\PostController@show')->name('posts.show');
 Route::get('/', 'Site\PostController@index');
 
-Route::get('/contato', function() {
-    return view('contact.index');
+Route::group(['prefix' => 'admin'], function(){
+    Route::resource('postos', 'Admin\PostController');
 });
+
+// Route::get('/contato', function() {
+//     return view('contact.index');
+// });
 
 // Route::get('/{lang?}', function ($lang='pt-BR') {
 //     App::setLocale($lang);
