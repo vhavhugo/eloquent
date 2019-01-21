@@ -15,7 +15,11 @@ class Post extends Model
      */
    public function details()
    {
-        return $this->hasOne('App\Details', 'post_id', 'id');
+        return $this->hasOne('App\Details', 'post_id', 'codigo')
+                    ->withDefault(function($details){
+                        $details->status = 'rascunho';
+                        $details->visibility = 'privado';
+                    });
        
    }
 }
