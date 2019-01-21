@@ -11,18 +11,19 @@
 |
 */
 
-Route::get('/post/{posts}', 'Site\PostController@show')->name('posts.show');
+Route::get('/post/{post}', 'Site\PostController@show')->name('posts.public.show');
 Route::get('/', 'Site\PostController@index');
 
-Route::group(['prefix' => 'admin'], function(){
-    Route::resource('postos', 'Admin\PostController');
+Route::post('comments/{post}', 'Site\CommentController@store')->name('comments.store');
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('posts', 'Admin\PostController');
 });
 
-// Route::get('/contato', function() {
-//     return view('contact.index');
-// });
+Route::get('/contato', function() {
+    return view('contact.index');
+});
 
-// Route::get('/{lang?}', function ($lang='pt-BR') {
-//     App::setLocale($lang);
-// });
+
+
 

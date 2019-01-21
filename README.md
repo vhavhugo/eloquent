@@ -1,73 +1,43 @@
-Relacionamento 1 para 1
 
-- Model - App\Post
- class Post extends Model
-{
-    /**
-     * Mapeia o relacionamento com o model details
-     *
-     * @return void
-     */
-   public function details()
-   {
-        return $this->hasOne('App\Details');
-       
-   }
-}
- - Model - App\Details
-class Details extends Model
-{
- 
-       /**
-     * Mapeia o relacionamento com o model post
-     *
-     * @return void
-     */
-    public function post()
-    {
-        return $this->belongsTo('App\Post');
-    }
-}
-# Treinaweb: curso ["Laravel - Blade Templates"](https://www.treinaweb.com.br/curso/laravel-blade-templates)
-
-
+# TreinaWeb: curso ["Laravel - Eloquent ORM"](https://www.treinaweb.com.br/curso/laravel-eloquent-orm)
 
 #### Lista de commits dos vídeos do curso
 Aula | Video | Commit | Link 
 ------ | ------ | ------ | ------ 
-01 | Ambiente do curso | 01 - Ambiente do curso | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/cf7c249c7a60b0d03db57750c6df318f0f824ac1.zip) 
-01 | Carregamento das Views | 02 - Carregamento das Views | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/51a7f136cde50f846c3b3d16a41caec4fa56c492.zip) 
-01 | Passando dados para as views | 03 - Passando dados para as views | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/bdc88bc2c98fac6693bc0180a7248725adb46709.zip) 
-02 | Dados escapados e não escapados | 04 - dados escapados e não escapados | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/4ed48b9bc0ca6ed58d7ff123066f28a1e6febd19.zip) 
-02 | Renderizando Json | 05 - renderizando Json | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/9310677f5752d31a748a2fe36b7eeb1cc3aa8328.zip) 
-02 | Variáveis de Frameworks JS | 06 - variáveis de Frameworks JS | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/371d0493129b602a77eb5ba84d72b0b7a0f6dbed.zip) 
-02 | Código PHP e comentários | 07 - código PHP e comentários | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/0eaf8747eaba67575b2a460010d4439db9059b16.zip) 
-03 | Estrutura condicional IF | 08 - estrutura condicional IF | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/b509818c9af70f755a0671bb6ce607beaf3d5558.zip) 
-03 | Condicional unless | 09 - condicional unless | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/69fd805e2c4422d7241911b495631d64d5ce99da.zip) 
-03 | Switch Case | 10 - Switch case | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/5c306650536a5a291af52885b7dc4cc6d6a3eee6.zip) 
-03 | Isset e Empty | 11 - Isset e Empty | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/300ab8c8367aff5b4cb37af921bf071df8bbc17c.zip) 
-03 | Exibindo informação para usuários logados ou visitantes | 12 - Exibindo informação para usuários logados ou visitantes | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/a8dbe6f0720301bd862c8d3bdd7e2a7b6882c211.zip) 
-03 | Montando o template de um blog | 13 - montando template do blog | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/2d3b173b4aec9c839e95f78481fb7b1f44310f67.zip) 
-04 | Loops for e while | 14 - loops for e while | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/47b9f1c52586bf004fb79016fe03a268044d6562.zip) 
-04 | Loops foreach e forelse | 15 - loops foreach e forelse | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/36e6f99eb8e56a26ddcfa9a84d266f9e49678ba6.zip) 
-04 | Modificadores continue e break | 16 - modificadores continue e break | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/565ca1b72f36425c8aa080cb2d4ebd499c662202.zip) 
-04 | Variável loop | 17 - Variável loop | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/5241361b393f5db1d9fb144cb237dafc2448f93f.zip) 
-05 | Separando o template em sub-views com include  | 18 - Separando o template em sub-views com include | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/8ecb89c0bd42a01fc67d0693e6345becdeacda37.zip) 
-05 | IncludeIf e IncludeWhen | 19 - IncludeIf e IncludeWhen | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/870a3b86ea067748bdc9c64d5c7b67c195b6ff8c.zip) 
-05 | IncludeFirst | 20 - IncludeFirst | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/da9385cd976406cf908766b5214b91792e45e230.zip) 
-05 | Enviando dados para sub-views | 21 - enviar dados para subview | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/66d9ab390f96d3096db39c452b68c0116bf4b769.zip) 
-05 | Renderizando collections com each | 22 - Renderizando collections com each | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/d9f6d5148ea1c4beaa076fd805b65eb72cd70b34.zip) 
-06 | Criando layouts | 23 - Criando layouts | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/5326b6544d0f5e2eabd0577dbbc52b3106a43f7c.zip) 
-06 | Uso de seções | 24 - Uso de seções | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/3f11fc59662bd1250b9f90578734403c2e524c84.zip) 
-06 | Valor padrão e extensão em seções | 25 - Valor padrão e extensão em seções | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/705b255df3667fc459dd3f51c3e14545146cc0f3.zip) 
-07 | Criando Componentes | 26 - Criando Componentes | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/8ab3dd199a4cce5e3226e6b78d0ee45b128f667b.zip) 
-07 | Criando Slots Adicionais | 27 - Criando Slots Adicionais | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/83ba62305f932b21f5505bd73d6552504596ca12.zip) 
-07 | Enviando informações Adicionais | 28 - Enviando informações Adicionais | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/e19ddba124ddfeef89c963585985ef85a41a33b4.zip) 
-07 | Criando Atalho para componentes | 29 - Criando Atalho para componentes | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/b12830617ac92859827a717974e2013814f977a2.zip) 
-08 | Arquivos de tradução no Laravel | 30 - Arquivos de tradução no Laravel | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/9037042485bc2bcd069281fe31df86f7fd9c74a4.zip) 
-08 | Impressão multi-idioma | 31 - impressão em multi-idioma | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/637ddcc42c7a3b9b056c2b45302777fbffe2a636.zip) 
-08 | Escolhendo o idioma em modo de execução | 32 - Escolhendo o idioma em modo de execução | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/b3037226e2c743fd15bec55d917bb740587b3f14.zip) 
-09 | Diretiva Stack | 33 - Diretiva Stack | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/d6d659686daeb01f8689f62bd672cb5dd656411e.zip) 
-09 | Criando novas diretivas | 34 - Criando novas diretivas | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/2bff7861a5e60793e518312921273d968f99e451.zip) 
-09 | Condicional personalizado | 35 - Condicional personalizado | [Download](https://github.com/treinaweb/treinaweb-laravel-apis/archive/c39059fa7ea12b93341677b33643ab284796f8f9.zip) 
-
+02 | Configurando a conexão | 04 - configurando as conexões | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/9971e92d5c46fdfb9d6310de53b7ee0f111546b3.zip) 
+03 | Gerando migrations | 05 - criando migrations | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/a5a18f624eacf69d3e560cbea5f924b6cf96754a.zip) 
+03 | Executando e fazendo rollback | 06 - executando migrations e fazendo rollback | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/6f4a446a8f48147ee5eda9a60c6a86c1e4e4e4e5.zip) 
+04 | Criando os primeiros Models | 07 - criando os primeiros models | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/a7d2a2f630d575a8baa02252f7388841c340cb19.zip) 
+04 | Obtendo dados | 08 - buscando dados no banco | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/518896540f7e391dd4d609734b2ca32aa5213095.zip) 
+04 | Mapeando tabelas fora do padrão  | 10 - mapeando tabelas fora do padrão | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/47389fbb5a53659260b6b904a363b9a9ec59b2b0.zip) 
+04 | Mapeando chave primária e timestamp  | 11 - mapeando chave primaria e timestamp | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/59f96b907156a2526632c69aabd0fdf36c24af5f.zip) 
+05 | Inserindo registro | 12 - inserindo dados | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/1d6fc6e2cda33ba4d5561d20fec50033bc0476c4.zip) 
+05 | Métodos de inserção de dados em massa | 13 - inserção em massa de dados | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/10db04ceeb51577b5a382a6b3eed398ace0c9676.zip) 
+05 | Propriedade guarded em comparação com a fillable | 14 - propriedade guarded | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/8301dc175279f601e1744e0a4e07cc4898b7a9fc.zip) 
+06 | Criando o controller | 17 - Transferindo rota para controller | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/eef88ffcc0a37b02d9d37afa5bc498f5807b731f.zip) 
+06 | Buscando post único no banco | 18 - buscando post unico no banco | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/009558db684cd9db71f4ff4cf6187da11869d89e.zip) 
+06 | Mostrando os últimos posts | 19 - mostrando ultimos posts | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/54501a46a51f1c6d7407ee882b8277e16e75c66a.zip) 
+06 | Ordenação e Paginação | 20 - ordenação e paginação | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/f2610ba5ed5097d936c374645c2cec8f92be4554.zip) 
+06 | Solução do desafio | 21 - resposta do desafio | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/8d950fd0c362a2662377af84e41574d19997c5d0.zip) 
+08 | Preparando banco de dados | 22 - preparando banco de dados | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/70421ccf151d907c81a2f0a0fee9bcb835f44726.zip) 
+08 | Mapeando Relacionamento | 23 - Mapeando o relacionamento | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/a5719af508b88786143a9fd1c0ebacb6af88da6f.zip) 
+08 | Persistindo dados da relação | 25 - persistindo dados atraves da relaçao | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/826496e7127200385d0759f76aa561cb6e87e0bb.zip) 
+08 | Mapeando Relacionamento fora da convenção | 26 - mapeando relacionamento manualmente | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/30a3e9904c9bc2f7e453e3ba88a1703e49209d3a.zip) 
+08 | Model Padrão | 27 - Model Padrão | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/a3be613782cdbde6f03d8c5037383e29219320d5.zip) 
+08 | Implementando relacionamento na aplicação | 28 - Implementando o relacionamento na aplicação | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/e0bd7db4ddb134472d7c2d074fed01cb35aab41b.zip) 
+08 | Buscando dados via relação | 29 - filtrando dados via relação | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/6ece77d9c3103eb5f1b6516ea2035f7698e374b4.zip) 
+09 | Preparando banco de dados | 30 - Preparando banco de dados | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/eb47d953fb2ea2012a2b81132515ee9bd51b96e8.zip) 
+09 | Mapeando pela convenção | 31 - mapeando a relação | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/ebaf4180ae4fbf2d662b9a22ada893eed3772253.zip) 
+09 | Mapeando Relacionamento fora da convenção | 32 - mapeando o relacionamento manualmente | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/ff3914326eafbde887f4610c180e6a1a6c431d0e.zip) 
+09 | Persistindo dados da relação | 33 - metodos de persistencia via relação | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/b52dcdeec2bba351133f11c27008e2d4d463413e.zip) 
+09 | Implementando relacionamento na aplicação | 34 - implementando relacionamento na aplicação | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/f5e8a46563fc25d42a910a3b4a4fcc2368d9a6a6.zip) 
+10 | Preparando o banco de dados | 35 - preparando o banco de dados | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/0e4d5f1b5b7cc90ae0a6f4614026a62b19e46510.zip) 
+10 | Mapeando pela convenção | 36 - mapear o relacionamento e obter dados | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/5990afa3b2f2ca61064bc3eb9989db8c4eb025e1.zip) 
+10 | Mapeando Relacionamento fora da convenção | 37 - Mapeando o relacionamento manualmente | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/ec4b4630f0a86421a708b68cc32ef9093b409fcf.zip) 
+10 | Métodos de persistência e associação | 38 - metodos de persistencia e associação | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/a1036531e65b03da70bcd4b7ea89e769b4c9d997.zip) 
+10 | Implementando N para N no admin | 39 - Implementando N para N no admin | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/d4e26fcc76e6acbd8de73fee4f57dab0ec91150c.zip) 
+10 | Implementando N para N no site | 40 - mostrar categorias | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/18221edfea55ba3eec4386c5cc0a79f8761ab76b.zip) 
+11 | Verificando as queries | 41 - Laravel debugbar | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/f0d25c36ac01f83e948bad40be747b07eafaa970.zip) 
+11 | Eager Loading | 42 - eager load | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/9bfe469dda83c6745821e9b64a1cf1ec5318cbf2.zip) 
+11 | Lazy Eager Loading | 43 - Lazy eager loading | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/36992d42c9549eb247450555ae23bdd8e1adcf20.zip) 
+11 | Usando o Eloquent fora do Laravel | 44 - eloquent fora do laravel | [Download](https://github.com/treinaweb/treinaweb-eloquent-fundamentos/archive/9261775f976ff66e88ab0660c42ec314ef40fc25.zip) 
