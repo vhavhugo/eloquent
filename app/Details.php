@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Details extends Model
 {
+    protected $fillable = ['status', 'visibility'];
     /**
      * Mapeia o relacionamento com o model post
      *
@@ -13,6 +14,6 @@ class Details extends Model
      */
     public function post()
     {
-        return $this->belongsTo('App\Post');
+        return $this->belongsTo('App\Post', 'post_id', 'id');
     }
 }

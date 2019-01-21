@@ -15,7 +15,7 @@ class Post extends Model
      */
    public function details()
    {
-        return $this->hasOne('App\Details');
+        return $this->hasOne('App\Details', 'post_id', 'id');
        
    }
 }
