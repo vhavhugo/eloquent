@@ -13,6 +13,6 @@ class Details extends Model
      * @return void
      */
     public function post(){
-        return $this->belongsTo('App\Post');
+        return $this->belongsTo('App\Post', 'post_id', 'id');
     }
 }
