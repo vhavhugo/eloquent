@@ -29,3 +29,11 @@ class Post extends Model
     }
 }
 
+------------------------------------------------------
+Obtendo dados
+$post = \App\Post::find(1)
+$post->details
+
+$detalhes = \App\Details::find(2)
+$detalhes->post
+
