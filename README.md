@@ -36,4 +36,19 @@ $post->details
 
 $detalhes = \App\Details::find(2)
 $detalhes->post
+--------------------------------------------------
+Persistindo dados 
+- belongsTo - você consegue usar o associate
+- hasOne, pode usar o método create
+$post = \App\Post::create(['title' => 'meu post 1 para 1', 'content' => 'conteudo de teste'])
+$post->details()->create(['status' => 'rascunho', 'visibility' => 'privado'])
+- 
+$post3 = \App\Post::find(3)
+$detalhes = new \App\Details
+$detalhes->status = 'publicado'
+$detalhes->visibilty = 'publico'
+$detalhes->post()->associate($post3)
+$detalhes->save()
+
+
 
