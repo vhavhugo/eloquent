@@ -28,9 +28,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('comments', function($table) {
-            $table->dropColumn('tamanho');
-        });
-//        Schema::dropIfExists('comments');
+        Schema::dropIfExists('comments');
     }
 }

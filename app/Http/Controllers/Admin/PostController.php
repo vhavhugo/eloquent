@@ -3,11 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Post;
-use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
-
 
 class PostController extends Controller
 {
@@ -30,9 +28,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::get();
-
-        return view('admin.posts.create', compact('categories'));
+        return view('admin.posts.create');
     }
 
     /**
@@ -43,11 +39,7 @@ class PostController extends Controller
      */
     public function store(postRequest $request)
     {
-        $post = Post::create($request->only('title', 'content'));
-
-        $post->categories()->sync($request->categories_ids);
-
-        $post->details()->create($request->only('status', 'visibility'));
+        $post = Post::create($request->all());
 
         if ($post) {
             $request->session()->flash('success', 'Post cadastrado com sucesso!');
@@ -77,9 +69,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        $categories = Category::get();
-
-        return view('admin.posts.edit', compact('post', 'categories'));
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**
@@ -91,12 +81,9 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
-        $result = $post->update($request->only('title', 'content'));
+        $result = $post->update($request->all());
 
         if ($result) {
-            $post->categories()->sync($request->categories_ids);
-            $post->details->update($request->only('status', 'visibility'));
-
             $request->session()->flash('success', 'Post atualizado com sucesso!');
         } else {
             $request->session()->flash('error', 'Erro ao atualizar Post');

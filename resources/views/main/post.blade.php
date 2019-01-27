@@ -1,5 +1,5 @@
 <div class="post-preview">
-  <a href="{{ route('posts.public.show', $post) }}">
+  <a href="{{ route('posts.show', $post) }}">
     <h2 class="post-title">
       {{ $post->title }}
     </h2>
@@ -10,14 +10,5 @@
   <p class="post-meta">
     Postado por <a href="#">Treinaweb</a> em @datebr($post->created_at)
   </p>
-
-  @if (request()->query('categories'))
-    <p class="post-meta">
-        Categorias: 
-        @foreach($post->categories as $category)
-          <a href="#">{{ $category->name }}</a>
-        @endforeach
-    </p>
-  @endif  
 </div>
 <hr>
