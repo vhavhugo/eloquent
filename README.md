@@ -1,3 +1,6 @@
+- Criar no nova chave estrangeira
+php artisan make:migration add_foreign_key_post_id
+
 
 Relacionamento 1 para 1
 
