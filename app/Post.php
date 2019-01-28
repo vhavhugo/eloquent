@@ -26,6 +26,6 @@ class Post extends Model
      * @return void
      */
     public function comments(){
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\Comment', 'post_id', 'id');
     }
 }
