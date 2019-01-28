@@ -19,4 +19,13 @@ class Post extends Model
                         $details->visibility = 'private';
                     });
     }
+
+    /**
+     * Mapeia o relacionamento com o model de comentários
+     *
+     * @return void
+     */
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
 }

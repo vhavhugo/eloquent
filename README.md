@@ -53,5 +53,32 @@ $detalhes->visibilty = 'publico'
 $detalhes->post()->associate($post3)
 $detalhes->save()
 
+/////////////////////////////////////////////////
+Relacionamento 1 para N
+
+     /**
+     * Mapeia o relacionamento com o modo comentários
+     *
+     * @return void
+     */
+class Comment extends Model
+{
+   public function post(){
+      return $this->belongsTo('App\Post');
+   }
+}
+
+------------------------------------------
+     /**
+     * Mapeia o relacionamento com o model de comentários
+     *
+     * @return void
+     */
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
+}
+--------------------------------------------
+
 
 
