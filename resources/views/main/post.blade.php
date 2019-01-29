@@ -1,5 +1,5 @@
 <div class="post-preview">
-  <a href="{{ route('posts.show', $post) }}">
+  <a href="{{ route('posts.public.show', $post) }}">
     <h2 class="post-title">
       {{ $post->title }}
     </h2>
