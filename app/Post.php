@@ -28,4 +28,15 @@ class Post extends Model
     public function comments(){
         return $this->hasMany('App\Comment', 'post_id', 'id');
     }
+
+    /**
+     * Mapeia o relacionamento com o model de categorias
+     *
+     * @return void
+     */
+    public function categories()
+    {
+        return $this->belongsToMany('App\Category', 'category_post', 'post_id', 'category_id')
+                    ->withTimestamp();
+    }
 }

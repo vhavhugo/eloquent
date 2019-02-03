@@ -15,4 +15,9 @@ class Details extends Model
     public function post(){
         return $this->belongsTo('App\Post', 'post_id', 'id');
     }
+
+    public function Categories()
+    {
+        return $this->belongToMany('App\Category');
+    }
 }

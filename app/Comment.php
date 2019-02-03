@@ -15,4 +15,10 @@ class Comment extends Model
    public function post(){
       return $this->belongsTo('App\Post', 'post_id', 'id');
    }
+
+   public function categories()
+   {
+      return $this->belongsToMany('App\Category', 'category_post', 'post_id', 'category_id')
+                  ->withTimestamps();
+   }
 }

@@ -1,5 +1,11 @@
+- Criar migrate para N para N
+php artisan make:migration create_category_post_tabel
+
 - Criar no nova chave estrangeira
 php artisan make:migration add_foreign_key_post_id
+
+- Criar migration para duas chaves estrangeiras
+php artisan make:migration create_category_post_table
 
 
 Relacionamento 1 para 1
@@ -80,5 +86,65 @@ class Comment extends Model
 }
 --------------------------------------------
 
+Relacionamento N para N
 
+class Details extends Model
+{
+    public function Categories()
+    {
+        return $this->belongToMany('App\Category');
+    }
+}
+
+class Category extends Model
+{
+    /**
+     * Mapeia o relacionamento com a tabela posts
+     *
+     * @return void
+     */
+    public function posts()
+    {
+        return $this->belongsToMany('App\Post', 'category_post', 'category_id', 'post_id')->withTimestamp();
+        /** ->withTimestamp(); faz enviar a data do create */
+    }
+}
+
+class Post extends Model
+{
+    /**
+     * Mapeia o relacionamento com o model de categorias
+     *
+     * @return void
+     */
+    public function categories()
+    {
+        return $this->belongsToMany('App\Category', 'category_post', 'post_id', 'category_id');
+    }
+}
+
+class Comment extends Model
+{
+
+   public function categories()
+   {
+      return $this->belongsToMany('App\Category', 'category_post', 'post_id', 'category_id')
+                  ->withTimestamps();
+   }
+}
+
+
+$post = \App\Post::find(1)
+$post->categories()->create(['name' => 'teste', 'description' => 'teste'])
+/** Liga as categorias - Associa a relação atraves do id
+$post->categories()attach(1)
+/** Desassocia a relação atraves do id
+$post->categories()detach([2,3,4])
+/** Inverte relaciona e desrelaciona invertendo o estado atual
+$post->categories()->sync([1,2,3,4])
+/** Ele mantem o que está e coloca mais os solicitados
+$post->categories()->syncWithoutDetaching([5,8])
+/** Inverte o que tiver
+$post->categories()->syncWithoutDetaching([5,8])
+$post->categories()->toggle([5,8])
 
