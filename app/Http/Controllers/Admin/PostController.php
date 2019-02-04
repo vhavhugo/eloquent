@@ -18,13 +18,16 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderBy('create_at', 'desc')
-                    ->with('categories')
+                    // ->with('categories')
                     // ->has('comments', '>', '10')
                     ->whereHas('details', function($query){
                         $query->where('status', 'publicado')
                               ->where('visibility', 'publico');
                     })
                     ->paginate(10);
+                    if(request()->query('categories')){
+                        $posts->load('categories');
+                    }
                 // dd($posts);
         return view('admin.posts.index')->with([
             'posts' => $posts
