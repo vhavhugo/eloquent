@@ -11,6 +11,19 @@
     </div>
 </div>
 <div class="form-group">
+    <label for="categories_ids" class="col-sm-2 control-label">Categorias</label>
+    <div class="col-sm-10">
+        <select name="categories_ids[]" id="categories_ids" class="form-control" multiple>
+            @foreach($categories as $category)
+                <option 
+                    {{ in_array($category->id, $post->categories->pluck('id')->all()) ? 'selected' : '' }}
+                    value="{{ $category->id }}">{{ $category->name }}
+                </option>
+            @endforeach
+        </select>
+    </div>
+</div>
+<div class="form-group">
     <label for="status" class="col-sm-2 control-label">Conteúdo</label>
     <div class="col-sm-10">
         <select name="status" id="status" class="form-control">
