@@ -1,3 +1,6 @@
+https://github.com/barryvdh/laravel-debugbar
+
+
 - Criar migrate para N para N
 php artisan make:migration create_category_post_tabel
 
